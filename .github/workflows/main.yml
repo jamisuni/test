@@ -45,10 +45,9 @@ jobs:
         run: touch release/wwwroot/.nojekyll
   
       # Commits wwwroot to GitHub Pages (https://github.com/marketplace/actions/deploy-to-github-pages)
-      # was /wwwroot
       - name: Commit wwwroot to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.6.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: release
+          folder: release/wwwroot
