@@ -2,18 +2,21 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Testing: NAVIGATIOn</h1>
+<h1>Testing: NAVIGATION</h1>
+
+<h5>@($"NavigationManager.BaseUri = [{NavigationManager.BaseUri}]")</h5>
+
 
 Hmm... NavigationManager... missing subdomain still
 
 
-<MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateWeather">NM:Weather</MudButton>
+<MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateWeather">NM(BU):Weather</MudButton>
 
 
 <MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateTest">NM:Test</MudButton>
 
 
-<MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateTestThree">NM:Test3</MudButton>
+<MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateTestThree">NM(BU):Test3</MudButton>
 
 <p>
 How about with NavLink?? seams handle subdomain automatically.. per correct base href I assume..
@@ -41,7 +44,7 @@ How about with NavLink?? seams handle subdomain automatically.. per correct base
             <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">Secondary Text</MudText>
             <MudDivider Class="my-2" />
             <MudNavLink Href="/test">MudNM: test</MudNavLink>
-            <MudNavLink Href="/test/5">MudNM: test5</MudNavLink>
+            <MudNavLink Href=@($"{NavigationManager.BaseUri}test/5")>MudNM(BU): test5</MudNavLink>
         </MudNavMenu>
     </MudPaper>
 </p>
@@ -52,7 +55,7 @@ How about with NavLink?? seams handle subdomain automatically.. per correct base
 
     void OnNavigateWeather()
     {
-        NavigationManager.NavigateTo("/Weather");
+        NavigationManager.NavigateTo(NavigationManager.BaseUri + "Weather");
     }
 
     void OnNavigateCounter()
@@ -67,6 +70,6 @@ How about with NavLink?? seams handle subdomain automatically.. per correct base
 
     void OnNavigateTestThree()
     {
-        NavigationManager.NavigateTo("/Test/3");
+        NavigationManager.NavigateTo(NavigationManager.BaseUri + "Test/3");
     }
 }

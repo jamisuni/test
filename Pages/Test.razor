@@ -16,6 +16,8 @@ With Navigation Manager
 
 <MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateJumpHome">NM: Jump to Home</MudButton>
 
+<MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateJumpHomeBU">NM(BU): Jump to Home</MudButton>
+
 <MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateResetHome">NM: Reset to Home</MudButton>
 
 
@@ -48,6 +50,11 @@ With NavLink
     void OnNavigateJumpHome()
     {
         NavigationManager.NavigateTo("/");
+    }
+
+    void OnNavigateJumpHomeBU()
+    {
+        NavigationManager.NavigateTo(NavigationManager.BaseUri);
     }
 
     void OnNavigateResetHome()
