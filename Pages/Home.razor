@@ -5,3 +5,36 @@
 <h1>Hello, TEST!</h1>
 
 Temporary...
+
+<button @onclick="OnNavigateWeather">Weather</button>
+
+<button @onclick="OnNavigateCounter">Counter</button>
+
+<button @onclick="OnNavigateTest">Test</button>
+
+<button @onclick="OnNavigateTestThree">Test 3</button>
+
+@code {
+    
+    [Inject] NavigationManager NavigationManager { get; set; }
+
+    void OnNavigateWeather()
+    {
+        NavigationManager.NavigateTo("/Weather");
+    }
+
+    void OnNavigateCounter()
+    {
+        NavigationManager.NavigateTo("/Counter");
+    }
+
+    void OnNavigateTest()
+    {
+        NavigationManager.NavigateTo("/Test");
+    }
+
+    void OnNavigateTestThree()
+    {
+        NavigationManager.NavigateTo("/Test/3");
+    }
+}
