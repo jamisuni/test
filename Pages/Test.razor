@@ -8,9 +8,30 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
-<button @onclick="OnNavigateJumpHome">Jump to Home</button>
 
-<button @onclick="OnNavigateResetHome">Reset to Home</button>
+<p>
+
+With Navigation Manager
+
+
+<MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateJumpHome">NM: Jump to Home</MudButton>
+
+<MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateResetHome">NM: Reset to Home</MudButton>
+
+
+</p>
+
+<p>
+
+With NavLink
+
+<div class="nav-item px-3">
+    <NavLink class="nav-link" href="/">
+        <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> NL:JumpHome
+    </NavLink>
+</div>
+
+</p>
 
 @code {
     [Parameter] public int? CustomCount { get; set; } = null;

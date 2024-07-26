@@ -6,11 +6,14 @@
 
 Hmm... NavigationManager... missing subdomain still
 
-<button @onclick="OnNavigateWeather">NM:Weather</button>
 
-<button @onclick="OnNavigateTest">NM:Test</button>
+<MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateWeather">NM:Weather</MudButton>
 
-<button @onclick="OnNavigateTestThree">NM:Test3</button>
+
+<MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateTest">NM:Test</MudButton>
+
+
+<MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="OnNavigateTestThree">NM:Test3</MudButton>
 
 <p>
 How about with NavLink?? seams handle subdomain automatically.. per correct base href I assume..
@@ -26,6 +29,21 @@ How about with NavLink?? seams handle subdomain automatically.. per correct base
         <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> NL:Test3
     </NavLink>
 </div>
+</p>
+
+<p>
+    And also giving try for MudNavMenu
+
+
+    <MudPaper Width="250px" Class="py-3" Elevation="0">
+        <MudNavMenu>
+            <MudText Typo="Typo.h6" Class="px-4">My Application</MudText>
+            <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">Secondary Text</MudText>
+            <MudDivider Class="my-2" />
+            <MudNavLink Href="/test">MudNM: test</MudNavLink>
+            <MudNavLink Href="/test/5">MudNM: test5</MudNavLink>
+        </MudNavMenu>
+    </MudPaper>
 </p>
 
 @code {
