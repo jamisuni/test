@@ -8,13 +8,29 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+<button @onclick="OnNavigateJumpHome">Jump to Home</button>
+
+<button @onclick="OnNavigateResetHome">Reset to Home</button>
+
 @code {
     [Parameter] public int? CustomCount { get; set; } = null;
+
+    [Inject] NavigationManager NavigationManager { get; set; }
 
     private int currentCount = 0;
 
     private void IncrementCount()
     {
         currentCount += CustomCount.HasValue ? CustomCount.Value : 1;
+    }
+
+    void OnNavigateJumpHome()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+    void OnNavigateResetHome()
+    {
+        NavigationManager.NavigateTo("/", true);
     }
 }

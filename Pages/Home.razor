@@ -2,17 +2,31 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, TEST!</h1>
+<h1>Testing: NAVIGATIOn</h1>
 
-Temporary...
+Hmm... NavigationManager... missing subdomain still
 
-<button @onclick="OnNavigateWeather">Weather</button>
+<button @onclick="OnNavigateWeather">NM:Weather</button>
 
-<button @onclick="OnNavigateCounter">Counter</button>
+<button @onclick="OnNavigateTest">NM:Test</button>
 
-<button @onclick="OnNavigateTest">Test</button>
+<button @onclick="OnNavigateTestThree">NM:Test3</button>
 
-<button @onclick="OnNavigateTestThree">Test 3</button>
+<p>
+How about with NavLink?? seams handle subdomain automatically.. per correct base href I assume..
+
+<div class="nav-item px-3">
+    <NavLink class="nav-link" href="test">
+        <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> NL:Test
+    </NavLink>
+</div>
+
+<div class="nav-item px-3">
+    <NavLink class="nav-link" href="test/3">
+        <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> NL:Test3
+    </NavLink>
+</div>
+</p>
 
 @code {
     
